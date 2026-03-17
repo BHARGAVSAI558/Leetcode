@@ -1,14 +1,9 @@
 class Solution {
 
-    int min(int x,int y,int z){
-        if(x<=y && y<=z)
-        return x;
-        else if(y<=z && y<=x)
-        return y;
-        else 
-        return z;
-
-    }
+    
+int min(int x, int y, int z) {
+    return Math.min(x, Math.min(y, z));
+}
     
     public int minDistance(String word1, String word2) {
         int m=word1.length();
@@ -27,9 +22,7 @@ class Solution {
         for(int i=1;i<m+1;i++){
          for(int j=1;j<n+1;j++)
          {
-          
-
-            if(s1[i-1]==s2[j-1])
+        if(s1[i-1]==s2[j-1])
             dp[i][j]=dp[i-1][j-1];
             else 
             dp[i][j]=1+min(dp[i][j-1],dp[i-1][j-1],dp[i-1][j]);
