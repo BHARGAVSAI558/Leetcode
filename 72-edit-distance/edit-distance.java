@@ -1,10 +1,9 @@
-class Solution {
-
+class Solution 
+{
     
 int min(int x, int y, int z) {
     return Math.min(x, Math.min(y, z));
 }
-    
     public int minDistance(String word1, String word2) {
         int m=word1.length();
         int n=word2.length();
