@@ -1,59 +1,52 @@
 class Solution {
 
-    public int first(int []nums, int x){
-
+    public int first(int nums[],int n)
+    {
         int low=0;
         int high=nums.length-1;
-        int first=-1;
-        while(low<=high)
-        {
+        int ans=-1;
+        while(low<=high){
             int mid=low+(high-low)/2;
-            if(nums[mid]==x)
-            {
-                first=mid;
-                high=mid-1;
+            if(nums[mid]==n){
+                ans=mid;
+                  high=mid-1;
             }
-            else if(nums[mid]<x){
-                low=mid+1;
+            else if(nums[mid]>n){
+                 high=mid-1;
             }
             else{
-                high=mid-1;
+                low=mid+1;
             }
-
         }
-        return first;
+
+    return ans;
 
     }
-
-    public int last(int []nums,int x){
-        int low=0;
+    public int last(int nums[],int n){
+          int low=0;
         int high=nums.length-1;
-        int last=-1;
-        while(low<=high)
-        {
+        int ans=-1;
+        while(low<=high){
             int mid=low+(high-low)/2;
-            if(nums[mid]==x)
-            {
-                last=mid;
+            if(nums[mid]==n){
                low=mid+1;
+                ans=mid;
             }
-            else if(nums[mid]<x){
-                low=mid+1;
+            else if(nums[mid]>n){
+                 high=mid-1;
             }
             else{
-                high=mid-1;
+                low=mid+1;
             }
-
         }
-        return last;
+
+    return ans;
+
+    
     }
 
     public int[] searchRange(int[] nums, int target) {
         
-       
-        
-
         return new int[]{ first(nums,target),last(nums,target)};
-
     }
 }
