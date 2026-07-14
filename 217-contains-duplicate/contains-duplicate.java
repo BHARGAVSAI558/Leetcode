@@ -10,7 +10,7 @@ class Solution {
             if(map.containsKey(num))
                 return true;
 
-            map.put(num,1);
+            map.put(num,0);
 
         }
 
