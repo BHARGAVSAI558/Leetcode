@@ -3,10 +3,10 @@ class Solution {
     public boolean containsDuplicate(int[] nums) {
 
 
-        HashMap <Integer,Integer> map=new HashMap<>();
+        HashSet <Integer> map=new HashSet<>();
         for(int i:nums){
 
-            map.put(i,map.getOrDefault(i,0)+1);
+            map.add(i);
 
         }
 
