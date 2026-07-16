@@ -1,12 +1,19 @@
 class Solution {
     public int singleNumber(int[] nums)
     {
-    
-        int xor=nums[0];
-         for(int i=1;i<nums.length;i++){
-            xor^=nums[i];
-         }
+        HashMap <Integer,Integer> dbs=new HashMap<>();
 
-         return xor;
+        for(int i : nums)
+        {
+            dbs.put(i,dbs.getOrDefault(i,0)+1);
+        }
+
+      for (Map.Entry<Integer, Integer> entry : dbs.entrySet()){
+        if(entry.getValue()==1){
+            return entry.getKey();
+        }
+      }
+        return -1;
+
     }
 }
