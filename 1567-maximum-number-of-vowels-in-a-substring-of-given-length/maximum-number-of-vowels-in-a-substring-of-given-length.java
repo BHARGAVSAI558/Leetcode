@@ -1,15 +1,16 @@
 class Solution {
 
-    public boolean isVowel(char p){
-        if(p=='a' || p=='e' || p=='i' || p=='o' || p=='u'){
-            return true;
-        }
-        return false;
-    }
+   public boolean isVowel(char ch) {
+    return ch == 'a' ||
+           ch == 'e' ||
+           ch == 'i' ||
+           ch == 'o' ||
+           ch == 'u';
+}
     public int maxVowels(String s, int k)
      {
         int l=0;
-        int max=Integer.MIN_VALUE;
+        int max=0;
         int count=0;
         for(int i=0;i<s.length();i++)
         {
