@@ -10,13 +10,12 @@ class Solution {
                 five++;
             }
             else if(bills[i]==10){
-                ten+=1;
-                if(five>0){
-                    five-=1;
-                }
-                else{
+                 
+                if (five == 0)
                     return false;
-                }
+
+                five--;
+                ten++;
                 
             }
             
