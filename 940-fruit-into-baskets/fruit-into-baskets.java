@@ -1,29 +1,34 @@
 class Solution {
     public int totalFruit(int[] fruits) {
-       int l=0;
-       int ans=0;
+      
+      int l=0;
+      int max=1;
+HashMap <Integer,Integer> dbs=new HashMap<>();
 
-    HashMap <Integer,Integer > dbs =new HashMap<>();
-        // i = right
+      for(int i=0;i<fruits.length;i++)
+      {
 
-       for(int i=0;i<fruits.length;i++){
-        int f=fruits[i];
-        dbs.put(f,dbs.getOrDefault(f,0)+1);
+        int f1=fruits[i];
 
-       while(dbs.size()>2){
-        int rem =fruits[l];
-        dbs.put(rem,dbs.get(rem)-1);
+    dbs.put(f1,dbs.getOrDefault(f1,0)+1);
 
-        if(dbs.get(rem)==0){
-            dbs.remove(rem);
+        while(dbs.size()>2)
+        {
+            int f2=fruits[l];
+
+            dbs.put(f2,dbs.get(f2)-1);
+
+            if(dbs.get(f2)==0){
+                dbs.remove(f2);
+            }
+            l++;
         }
-        l++;
-       }
-
-       ans=Math.max(ans,i-l+1);
-
-       }
+       
+           max= Math.max(max,i-l+1);
         
-        return ans;
+      }
+
+      return max;
+
     }
 }
